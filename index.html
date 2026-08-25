@@ -378,7 +378,7 @@ body.modal-open{overflow:hidden}
     <div class="eyebrow">Start a project</div>
     <h3 id="projectModalTitle">Let's build something<br><span>worth watching.</span></h3>
     <form class="form" id="projectForm">
-      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="access_key" value="e7b81b50-173c-4acb-96d5-af74941284e2">
       <input type="hidden" name="subject" value="New Project Inquiry — SYNCO">
       <input type="hidden" name="from_name" value="SYNCO Portfolio">
       <input type="checkbox" name="botcheck" style="display:none">
@@ -473,7 +473,7 @@ form?.addEventListener('submit', async e => {
   }
 
   const accessKey = form.querySelector('input[name="access_key"]')?.value;
-  if(!accessKey || accessKey === 'e7b81b50-173c-4acb-96d5-af74941284e2'){
+  if(!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY'){
     alert('Please add your Web3Forms access key before using the form.');
     return;
   }
