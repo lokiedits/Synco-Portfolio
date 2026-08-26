@@ -7,23 +7,230 @@
 <meta property="og:title" content="Logesh — Video Editor">
 <meta property="og:description" content="Premium video editing for creators, brands and businesses.">
 <title>Logesh — Video Editor</title>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-:root{--bg:#090909;--fg:#f2f1ed;--muted:#9b9a95;--line:#242422;--card:#11110f;--accent:#d8ff3e}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:"DM Sans",sans-serif}a{color:inherit;text-decoration:none}
-.wrap{width:min(1200px,92vw);margin:auto}.nav{position:sticky;top:0;z-index:20;background:rgba(9,9,9,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
-.navin{height:76px;display:flex;align-items:center;justify-content:space-between}.logo{font-family:"Space Grotesk";font-weight:700;font-size:22px}.links{display:flex;gap:28px;color:#c5c4bf;font-size:14px}.links a:hover{color:var(--fg)}.btn{display:inline-flex;padding:13px 18px;border:1px solid #3a3a36;border-radius:999px;font-weight:600;font-size:14px;transition:.25s}.btn.primary{background:var(--fg);color:#090909;border-color:var(--fg)}.btn:hover{transform:translateY(-2px)}
-.hero{padding:120px 0 90px;min-height:680px;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:end}.eyebrow{color:var(--accent);font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}.hero h1{font:600 clamp(56px,8vw,108px)/.92 "Space Grotesk";letter-spacing:-.065em;margin:20px 0 28px;max-width:850px}.hero p{font-size:19px;line-height:1.6;color:var(--muted);max-width:650px}.actions{display:flex;gap:12px;margin-top:32px}.hero-note{align-self:end;border-left:1px solid var(--line);padding-left:25px;color:var(--muted);line-height:1.7}.hero-note strong{display:block;color:var(--fg);font-size:28px;margin-bottom:4px}
-section{padding:100px 0;border-top:1px solid var(--line)}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px}.sectionhead h2{font:500 clamp(38px,5vw,68px)/1 "Space Grotesk";letter-spacing:-.045em;margin:0}.sectionhead p{max-width:430px;color:var(--muted);line-height:1.6;margin:0}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}.filter{background:transparent;color:var(--muted);border:1px solid var(--line);padding:10px 14px;border-radius:999px;cursor:pointer}.filter.active,.filter:hover{color:#090909;background:var(--fg);border-color:var(--fg)}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.project{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.3s}.project:hover{transform:translateY(-4px);border-color:#45453f}.media{aspect-ratio:9/14;background:#151512;position:relative}.media.wide{aspect-ratio:16/9}.media iframe{width:100%;height:100%;border:0}.info{padding:20px}.tag{font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.1em}.info h3{font:500 25px "Space Grotesk";margin:8px 0}.info p{color:var(--muted);line-height:1.5;margin:0}
-.services{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}.service{padding:30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.service:nth-child(3n){border-right:0}.num{color:var(--muted);font-size:12px}.service h3{font:500 25px "Space Grotesk";margin:45px 0 10px}.service p{color:var(--muted);line-height:1.6}
-.quote{font:500 clamp(38px,6vw,78px)/1.05 "Space Grotesk";letter-spacing:-.05em;max-width:1050px}.quote span{color:var(--muted)}
-.process{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}.step{padding:25px 18px;border-right:1px solid var(--line)}.step:last-child{border-right:0}.step h3{font:500 20px "Space Grotesk";margin:45px 0 10px}.step p{color:var(--muted);font-size:14px;line-height:1.55}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:80px}.about h2{font:500 clamp(42px,6vw,76px) "Space Grotesk";letter-spacing:-.05em;margin:0}.about p{font-size:18px;line-height:1.75;color:var(--muted)}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:80px}.contact h2{font:500 clamp(48px,7vw,90px)/.95 "Space Grotesk";letter-spacing:-.06em;margin:0}.form{display:grid;gap:12px}.form input,.form textarea,.form select{width:100%;background:#10100e;border:1px solid var(--line);color:var(--fg);padding:16px;border-radius:8px;font:inherit}.form textarea{min-height:140px;resize:vertical}.form button{cursor:pointer;border:0;margin-top:5px}
-footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;justify-content:space-between}.social{display:flex;gap:18px}
-@media(max-width:800px){.links{display:none}.hero{grid-template-columns:1fr;padding:80px 0}.hero h1{font-size:58px}.hero-note{display:none}.grid,.about,.contact{grid-template-columns:1fr}.services{grid-template-columns:1fr}.service{border-right:0}.process{grid-template-columns:1fr 1fr}.step:nth-child(2n){border-right:0}.sectionhead{display:block}.sectionhead p{margin-top:18px}.navin{height:66px}section{padding:75px 0}}
+
+:root{
+  --bg:#090909;
+  --fg:#f2f1ed;
+  --muted:#9b9a95;
+  --line:#242422;
+  --card:#11110f;
+  --accent:#d8ff3e;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:"DM Sans",sans-serif;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.wrap{
+  width:min(1200px,92vw);
+  margin:auto;
+}
+
+/* NAVIGATION */
+
+.nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(9,9,9,.82);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.navin{
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-family:"Space Grotesk";
+  font-weight:700;
+  font-size:22px;
+}
+
+.links{
+  display:flex;
+  gap:28px;
+  color:#c5c4bf;
+  font-size:14px;
+}
+
+.links a:hover{
+  color:var(--fg);
+}
+
+.btn{
+  display:inline-flex;
+  padding:13px 18px;
+  border:1px solid #3a3a36;
+  border-radius:999px;
+  font-weight:600;
+  font-size:14px;
+  transition:.25s;
+}
+
+.btn.primary{
+  background:var(--fg);
+  color:#090909;
+  border-color:var(--fg);
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+/* HERO */
+
+.hero{
+  padding:120px 0 90px;
+  min-height:680px;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:50px;
+  align-items:end;
+}
+
+.eyebrow{
+  color:var(--accent);
+  font-size:13px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+.hero h1{
+  font:600 clamp(56px,8vw,108px)/.92 "Space Grotesk";
+  letter-spacing:-.065em;
+  margin:20px 0 28px;
+  max-width:850px;
+}
+
+.hero p{
+  font-size:19px;
+  line-height:1.6;
+  color:var(--muted);
+  max-width:650px;
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:32px;
+}
+
+.hero-note{
+  align-self:end;
+  border-left:1px solid var(--line);
+  padding-left:25px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.hero-note strong{
+  display:block;
+  color:var(--fg);
+  font-size:28px;
+  margin-bottom:4px;
+}
+
+/* SECTIONS */
+
+section{
+  padding:100px 0;
+  border-top:1px solid var(--line);
+}
+
+.sectionhead{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:30px;
+  margin-bottom:40px;
+}
+
+.sectionhead h2{
+  font:500 clamp(38px,5vw,68px)/1 "Space Grotesk";
+  letter-spacing:-.045em;
+  margin:0;
+}
+
+.sectionhead p{
+  max-width:430px;
+  color:var(--muted);
+  line-height:1.6;
+  margin:0;
+}
+
+/* FILTERS */
+
+.filters{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:28px;
+}
+
+.filter{
+  background:transparent;
+  color:var(--muted);
+  border:1px solid var(--line);
+  padding:10px 14px;
+  border-radius:999px;
+  cursor:pointer;
+}
+
+.filter.active,
+.filter:hover{
+  color:#090909;
+  background:var(--fg);
+  border-color:var(--fg);
+}
+
+/* GRID */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  align-items:start;
+}
+
+.project{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  overflow:hidden;
+  transition:.3s;
+  height:max-content;
+}
+
+.project:hover{
+  transform:translateY(-4px);
+  border-color:#45453f;
+}
+
+/* VIDEO */
 
 .media{
   position:relative;
@@ -32,8 +239,15 @@ footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   background:#151512;
   border-radius:16px 16px 0 0;
 }
-.media.vertical{aspect-ratio:9/16}
-.media.wide{aspect-ratio:16/9}
+
+.media.vertical{
+  aspect-ratio:9/16;
+}
+
+.media.wide{
+  aspect-ratio:16/9;
+}
+
 .media iframe{
   position:absolute;
   inset:0;
@@ -42,6 +256,7 @@ footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   border:0;
   display:block;
 }
+
 .reel{
   aspect-ratio:16/9;
   background:#151512;
@@ -49,40 +264,153 @@ footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   border-radius:18px;
   overflow:hidden;
 }
+
 .reel iframe{
   width:100%;
   height:100%;
   border:0;
   display:block;
 }
-.grid{
-  align-items:start;
-}
-.project{
-  height:max-content;
-}
-@media(max-width:800px){
-  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-}
-@media(max-width:520px){
-  .grid{grid-template-columns:1fr}
+
+/* PORTFOLIO */
+
+.portfolio-group{
+  margin-top:70px;
 }
 
-.portfolio-group{margin-top:70px}
-.portfolio-group:first-of-type{margin-top:0}
+.portfolio-group:first-of-type{
+  margin-top:0;
+}
+
 .portfolio-title{
   font:500 clamp(30px,4vw,48px)/1 "Space Grotesk";
   letter-spacing:-.04em;
   margin:0 0 24px;
 }
-.portfolio-group .grid{margin:0}
+
+.portfolio-group .grid{
+  margin:0;
+}
+
 .portfolio-group .project{
   background:transparent;
   border:0;
   border-radius:0;
   overflow:hidden;
 }
-.portfolio-group .media{border-radius:14px}
+
+.portfolio-group .media{
+  border-radius:14px;
+}
+
+/* SERVICES */
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);
+}
+
+.service{
+  padding:30px;
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.service:nth-child(3n){
+  border-right:0;
+}
+
+.num{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.service h3{
+  font:500 25px "Space Grotesk";
+  margin:45px 0 10px;
+}
+
+.service p{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* QUOTE */
+
+.quote{
+  font:500 clamp(38px,6vw,78px)/1.05 "Space Grotesk";
+  letter-spacing:-.05em;
+  max-width:1050px;
+}
+
+.quote span{
+  color:var(--muted);
+}
+
+/* PROCESS */
+
+.process{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  border-top:1px solid var(--line);
+}
+
+.step{
+  padding:25px 18px;
+  border-right:1px solid var(--line);
+}
+
+.step:last-child{
+  border-right:0;
+}
+
+.step h3{
+  font:500 20px "Space Grotesk";
+  margin:45px 0 10px;
+}
+
+.step p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.55;
+}
+
+/* ABOUT */
+
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+}
+
+.about h2{
+  font:500 clamp(42px,6vw,76px) "Space Grotesk";
+  letter-spacing:-.05em;
+  margin:0;
+}
+
+.about p{
+  font-size:18px;
+  line-height:1.75;
+  color:var(--muted);
+}
+
+/* CONTACT */
+
+.contact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+}
+
+.contact h2{
+  font:500 clamp(48px,7vw,90px)/.95 "Space Grotesk";
+  letter-spacing:-.06em;
+  margin:0;
+}
+
+/* CONTACT CTA */
 
 .contact-cta{
   min-height:420px;
@@ -91,14 +419,61 @@ footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   justify-content:space-between;
   gap:50px;
 }
+
 .contact-cta h2{
   font:500 clamp(52px,7vw,96px)/.94 "Space Grotesk";
   letter-spacing:-.065em;
   margin:18px 0 0;
 }
+
 .contact-cta h2 span,
-.glass-modal h3 span{color:var(--muted)}
-.contact-cta .btn{flex-shrink:0;padding:16px 24px;font-size:15px}
+.glass-modal h3 span{
+  color:var(--muted);
+}
+
+.contact-cta .btn{
+  flex-shrink:0;
+  padding:16px 24px;
+  font-size:15px;
+}
+
+/* FORM */
+
+.form{
+  display:grid;
+  gap:12px;
+}
+
+.form input,
+.form textarea,
+.form select{
+  width:100%;
+  background:#10100e;
+  border:1px solid var(--line);
+  color:var(--fg);
+  padding:16px;
+  border-radius:8px;
+  font:inherit;
+}
+
+.form textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+.form button{
+  cursor:pointer;
+  border:0;
+  margin-top:5px;
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+/* PROJECT MODAL */
 
 .project-modal{
   position:fixed;
@@ -112,17 +487,20 @@ footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   pointer-events:none;
   transition:opacity .35s ease,visibility .35s ease;
 }
+
 .project-modal.open{
   visibility:visible;
   opacity:1;
   pointer-events:auto;
 }
+
 .glass-backdrop{
   position:absolute;
   inset:0;
   background:rgba(3,3,3,.62);
   backdrop-filter:blur(16px) saturate(120%);
 }
+
 .glass-modal{
   position:relative;
   width:min(680px,94vw);
@@ -142,9 +520,11 @@ footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   transform:translateY(25px) scale(.96);
   transition:transform .45s cubic-bezier(.2,.8,.2,1);
 }
+
 .project-modal.open .glass-modal{
   transform:translateY(0) scale(1);
 }
+
 .glass-modal:before{
   content:"";
   position:absolute;
@@ -156,6 +536,7 @@ footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   filter:blur(70px);
   pointer-events:none;
 }
+
 .modal-close{
   position:absolute;
   right:20px;
@@ -170,13 +551,18 @@ footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   line-height:1;
   cursor:pointer;
 }
+
 .glass-modal h3{
   font:500 clamp(36px,5vw,58px)/.98 "Space Grotesk";
   letter-spacing:-.05em;
   margin:14px 0 28px;
 }
-.glass-modal .form{position:relative;z-index:1}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+.glass-modal .form{
+  position:relative;
+  z-index:1;
+}
+
 .glass-modal .form input,
 .glass-modal .form textarea,
 .glass-modal .form select{
@@ -184,20 +570,24 @@ footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   border-color:rgba(255,255,255,.12);
   backdrop-filter:blur(10px);
 }
-.submit-project{width:100%;justify-content:center}
+
+.submit-project{
+  width:100%;
+  justify-content:center;
+}
+
 .form-status{
   min-height:20px;
   margin:2px 0 0;
   color:var(--muted);
   font-size:13px;
 }
-body.modal-open{overflow:hidden}
 
-@media(max-width:800px){
-  .contact-cta{min-height:380px;display:block}
-  .contact-cta .btn{margin-top:35px}
-  .form-row{grid-template-columns:1fr}
+body.modal-open{
+  overflow:hidden;
 }
+
+/* SUCCESS MODAL */
 
 .success-modal{
   position:fixed;
@@ -211,17 +601,20 @@ body.modal-open{overflow:hidden}
   pointer-events:none;
   transition:opacity .35s ease,visibility .35s ease;
 }
+
 .success-modal.open{
   visibility:visible;
   opacity:1;
   pointer-events:auto;
 }
+
 .success-backdrop{
   position:absolute;
   inset:0;
   background:rgba(3,3,3,.7);
   backdrop-filter:blur(18px);
 }
+
 .success-glass{
   position:relative;
   width:min(520px,92vw);
@@ -232,15 +625,19 @@ body.modal-open{overflow:hidden}
   background:
     linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.045)),
     rgba(20,20,18,.75);
-  box-shadow:0 35px 100px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.18);
+  box-shadow:
+    0 35px 100px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.18);
   backdrop-filter:blur(30px) saturate(140%);
   -webkit-backdrop-filter:blur(30px) saturate(140%);
   transform:translateY(25px) scale(.96);
   transition:transform .45s cubic-bezier(.2,.8,.2,1);
 }
+
 .success-modal.open .success-glass{
   transform:translateY(0) scale(1);
 }
+
 .success-mark{
   width:64px;
   height:64px;
@@ -253,12 +650,17 @@ body.modal-open{overflow:hidden}
   font-size:28px;
   font-weight:700;
 }
+
 .success-glass h3{
   font:500 clamp(34px,5vw,52px)/1 "Space Grotesk";
   letter-spacing:-.05em;
   margin:14px 0 14px;
 }
-.success-glass h3 span{color:var(--accent)}
+
+.success-glass h3 span{
+  color:var(--accent);
+}
+
 .success-glass p{
   color:var(--muted);
   font-size:17px;
@@ -266,249 +668,1368 @@ body.modal-open{overflow:hidden}
   margin:0 0 28px;
 }
 
+/* DATE INPUT */
+
 .glass-modal input[type="date"]{
   color-scheme:dark;
 }
+
 .glass-modal input[type="date"]::-webkit-calendar-picker-indicator{
   cursor:pointer;
   filter:invert(1);
   opacity:.75;
 }
+
+/* FOOTER */
+
+footer{
+  padding:35px 0;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:13px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.social{
+  display:flex;
+  gap:18px;
+}
+
+/* =====================================================
+   MOBILE — KEEP DESKTOP LAYOUT
+   ===================================================== */
+
+@media(max-width:800px){
+
+  .wrap{
+    width:92vw;
+  }
+
+  .navin{
+    height:76px;
+  }
+
+  .links{
+    display:flex;
+    gap:14px;
+    font-size:11px;
+  }
+
+  .nav .btn{
+    padding:10px 13px;
+    font-size:11px;
+  }
+
+  .hero{
+    grid-template-columns:1.2fr .8fr;
+    padding:120px 0 90px;
+    gap:30px;
+    min-height:680px;
+  }
+
+  .hero h1{
+    font-size:clamp(45px,8vw,108px);
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .hero-note{
+    display:block;
+    padding-left:18px;
+    font-size:13px;
+  }
+
+  .hero-note strong{
+    font-size:22px;
+  }
+
+  .actions{
+    flex-wrap:wrap;
+  }
+
+  section{
+    padding:100px 0;
+  }
+
+  .sectionhead{
+    display:flex;
+    gap:20px;
+    margin-bottom:35px;
+  }
+
+  .sectionhead h2{
+    font-size:clamp(34px,5vw,68px);
+  }
+
+  .sectionhead p{
+    margin:0;
+    font-size:13px;
+  }
+
+  .grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .services{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .service{
+    padding:22px 18px;
+  }
+
+  .service h3{
+    font-size:20px;
+    margin:35px 0 10px;
+  }
+
+  .service p{
+    font-size:13px;
+  }
+
+  .process{
+    grid-template-columns:repeat(5,1fr);
+  }
+
+  .step{
+    padding:20px 12px;
+  }
+
+  .step h3{
+    font-size:16px;
+    margin:35px 0 10px;
+  }
+
+  .step p{
+    font-size:11px;
+  }
+
+  .about{
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+
+  .about p{
+    font-size:15px;
+  }
+
+  .contact{
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+
+  .contact-cta{
+    min-height:420px;
+    display:flex;
+  }
+
+  .contact-cta .btn{
+    margin-top:0;
+  }
+
+  .form-row{
+    grid-template-columns:1fr 1fr;
+  }
+
+  footer{
+    flex-direction:row;
+    gap:20px;
+  }
+
+}
+
+/* VERY SMALL PHONES
+   Still keeps desktop/two-column structure */
+
+@media(max-width:520px){
+
+  .wrap{
+    width:94vw;
+  }
+
+  .navin{
+    height:68px;
+  }
+
+  .logo{
+    font-size:18px;
+  }
+
+  .links{
+    display:none;
+  }
+
+  .nav .btn{
+    padding:9px 12px;
+    font-size:10px;
+  }
+
+  .hero{
+    grid-template-columns:1.2fr .8fr;
+    gap:18px;
+    padding:80px 0 70px;
+    min-height:auto;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .hero p{
+    font-size:13px;
+    line-height:1.5;
+  }
+
+  .hero-note{
+    font-size:10px;
+    line-height:1.5;
+  }
+
+  .hero-note strong{
+    font-size:18px;
+  }
+
+  .actions{
+    gap:7px;
+  }
+
+  .btn{
+    padding:10px 12px;
+    font-size:10px;
+  }
+
+  section{
+    padding:70px 0;
+  }
+
+  .sectionhead{
+    gap:12px;
+  }
+
+  .sectionhead h2{
+    font-size:32px;
+  }
+
+  .sectionhead p{
+    font-size:10px;
+    max-width:180px;
+  }
+
+  .grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:7px;
+  }
+
+  .portfolio-group{
+    margin-top:45px;
+  }
+
+  .portfolio-title{
+    font-size:26px;
+    margin-bottom:16px;
+  }
+
+  .services{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .service{
+    padding:15px 10px;
+  }
+
+  .service h3{
+    font-size:15px;
+    margin:25px 0 7px;
+  }
+
+  .service p{
+    font-size:9px;
+    line-height:1.45;
+  }
+
+  .process{
+    grid-template-columns:repeat(5,1fr);
+  }
+
+  .step{
+    padding:14px 7px;
+  }
+
+  .step h3{
+    font-size:12px;
+    margin:25px 0 7px;
+  }
+
+  .step p{
+    font-size:8px;
+    line-height:1.4;
+  }
+
+  .about{
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+
+  .about h2{
+    font-size:34px;
+  }
+
+  .about p{
+    font-size:11px;
+    line-height:1.6;
+  }
+
+  .contact{
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+
+  .contact-cta{
+    min-height:300px;
+    gap:20px;
+  }
+
+  .contact-cta h2{
+    font-size:42px;
+  }
+
+  .contact-cta .btn{
+    padding:12px 14px;
+  }
+
+  footer{
+    font-size:9px;
+  }
+
+  .social{
+    gap:10px;
+  }
+
+  .glass-modal{
+    width:94vw;
+    padding:25px 18px;
+    border-radius:22px;
+  }
+
+  .glass-modal h3{
+    font-size:34px;
+  }
+
+  .success-glass{
+    padding:40px 22px 30px;
+  }
+
+}
 </style>
 </head>
+
 <body>
-<nav class="nav"><div class="wrap navin"><a class="logo" href="#">LOGESH<span style="color:var(--accent)">.</span></a><div class="links"><a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></div><a class="btn primary" href="#contact">Start a Project</a></div></nav>
+
+<nav class="nav">
+  <div class="wrap navin">
+    <a class="logo" href="#">LOGESH<span style="color:var(--accent)">.</span></a>
+
+    <div class="links">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <a class="btn primary" href="#contact">Start a Project</a>
+  </div>
+</nav>
+
 
 <header class="wrap hero">
-<div><div class="eyebrow">Video Editor · Remote · Worldwide</div><h1>Video editing that makes people stop scrolling.</h1><p>I edit high-retention content for creators, brands and businesses — from short-form content to YouTube, podcasts, education and real estate.</p><div class="actions"><a class="btn primary" href="#work">View My Work</a><a class="btn" href="#contact">Start a Project</a></div></div>
-<div class="hero-note"><strong>13+ selected edits</strong>Real estate · Talking head · Education · YouTube & podcast trailers</div>
+
+  <div>
+    <div class="eyebrow">Video Editor · Remote · Worldwide</div>
+
+    <h1>
+      Video editing that makes people stop scrolling.
+    </h1>
+
+    <p>
+      I edit high-retention content for creators, brands and businesses —
+      from short-form content to YouTube, podcasts, education and real estate.
+    </p>
+
+    <div class="actions">
+      <a class="btn primary" href="#work">View My Work</a>
+      <a class="btn" href="#contact">Start a Project</a>
+    </div>
+  </div>
+
+  <div class="hero-note">
+    <strong>13+ selected edits</strong>
+    Real estate · Talking head · Education · YouTube & podcast trailers
+  </div>
+
 </header>
 
+
 <main>
-<section id="reel"><div class="wrap"><div class="sectionhead"><h2>Showreel</h2><p>A quick look at the editing language, pacing, motion and storytelling behind the work.</p></div><div class="reel"><iframe src="https://www.youtube.com/embed/_UFpK-tZ6JA?rel=0&modestbranding=1" title="Showreel placeholder" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div></section>
 
-<section id="work"><div class="wrap">
-<div class="sectionhead"><h2>Selected work</h2><p>A selection of edits across different content formats.</p></div>
+<!-- SHOWREEL -->
 
-<div class="portfolio-group">
-  <h3 class="portfolio-title">Real Estate</h3>
-  <div class="grid">
-    <div class="project"><div class="media vertical"><iframe src="https://www.youtube.com/embed/qGY-kFvZkus?rel=0&modestbranding=1" title="Real Estate" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
-    <div class="project"><div class="media vertical"><iframe src="https://www.youtube.com/embed/VAuruMjwciE?rel=0&modestbranding=1" title="Real Estate" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
-    <div class="project"><div class="media vertical"><iframe src="https://www.youtube.com/embed/AznCY5vE8_E?rel=0&modestbranding=1" title="Real Estate" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+<section id="reel">
+
+  <div class="wrap">
+
+    <div class="sectionhead">
+      <h2>Showreel</h2>
+
+      <p>
+        A quick look at the editing language, pacing, motion and storytelling
+        behind the work.
+      </p>
+    </div>
+
+    <div class="reel">
+
+      <iframe
+        src="https://www.youtube.com/embed/_UFpK-tZ6JA?rel=0&modestbranding=1"
+        title="Showreel placeholder"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+
+    </div>
+
   </div>
+
+</section>
+
+
+<!-- WORK -->
+
+<section id="work">
+
+<div class="wrap">
+
+  <div class="sectionhead">
+    <h2>Selected work</h2>
+
+    <p>
+      A selection of edits across different content formats.
+    </p>
+  </div>
+
+
+  <!-- REAL ESTATE -->
+
+  <div class="portfolio-group">
+
+    <h3 class="portfolio-title">
+      Real Estate
+    </h3>
+
+    <div class="grid">
+
+      <div class="project">
+        <div class="media vertical">
+          <iframe
+            src="https://www.youtube.com/embed/qGY-kFvZkus?rel=0&modestbranding=1"
+            title="Real Estate"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="media vertical">
+          <iframe
+            src="https://www.youtube.com/embed/VAuruMjwciE?rel=0&modestbranding=1"
+            title="Real Estate"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="media vertical">
+          <iframe
+            src="https://www.youtube.com/embed/AznCY5vE8_E?rel=0&modestbranding=1"
+            title="Real Estate"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- YOUTUBE / PODCAST -->
+
+  <div class="portfolio-group">
+
+    <h3 class="portfolio-title">
+      YouTube / Podcast
+    </h3>
+
+    <div class="grid">
+
+      <div class="project">
+        <div class="media wide">
+          <iframe
+            src="https://www.youtube.com/embed/_UFpK-tZ6JA?rel=0&modestbranding=1"
+            title="YouTube / Podcast"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="media wide">
+          <iframe
+            src="https://www.youtube.com/embed/TyHJI23S9So?rel=0&modestbranding=1"
+            title="YouTube / Podcast"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- TALKING HEAD -->
+
+  <div class="portfolio-group">
+
+    <h3 class="portfolio-title">
+      Talking Head
+    </h3>
+
+    <div class="grid">
+
+      <div class="project">
+        <div class="media vertical">
+          <iframe
+            src="https://www.youtube.com/embed/yTgloIFw0f4?rel=0&modestbranding=1"
+            title="Talking Head"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="media vertical">
+          <iframe
+            src="https://www.youtube.com/embed/B15v1TQfTsI?rel=0&modestbranding=1"
+            title="Talking Head"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="media vertical">
+          <iframe
+            src="https://www.youtube.com/embed/y0HGKlj-UUc?rel=0&modestbranding=1"
+            title="Talking Head"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="media vertical">
+          <iframe
+            src="https://www.youtube.com/embed/NSqkk_jdX8Q?rel=0&modestbranding=1"
+            title="Talking Head"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- EDUCATION -->
+
+  <div class="portfolio-group">
+
+    <h3 class="portfolio-title">
+      Education
+    </h3>
+
+    <div class="grid">
+
+      <div class="project">
+        <div class="media vertical">
+          <iframe
+            src="https://www.youtube.com/embed/rp7Tuhu9zhs?rel=0&modestbranding=1"
+            title="Education"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="media vertical">
+          <iframe
+            src="https://www.youtube.com/embed/aKp9OpWug-Y?rel=0&modestbranding=1"
+            title="Education"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="media vertical">
+          <iframe
+            src="https://www.youtube.com/embed/XVJI_qzKFag?rel=0&modestbranding=1"
+            title="Education"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="media vertical">
+          <iframe
+            src="https://www.youtube.com/embed/d9bSmErIZmc?rel=0&modestbranding=1"
+            title="Education"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
 
-<div class="portfolio-group">
-  <h3 class="portfolio-title">YouTube / Podcast</h3>
-  <div class="grid">
-    <div class="project"><div class="media wide"><iframe src="https://www.youtube.com/embed/_UFpK-tZ6JA?rel=0&modestbranding=1" title="YouTube / Podcast" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
-    <div class="project"><div class="media wide"><iframe src="https://www.youtube.com/embed/TyHJI23S9So?rel=0&modestbranding=1" title="YouTube / Podcast" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="wrap">
+
+  <div class="sectionhead">
+    <h2>What I edit</h2>
+
+    <p>
+      Content built around attention, clarity and a strong visual identity.
+    </p>
   </div>
+
+  <div class="services">
+
+    <div class="service">
+      <span class="num">01</span>
+      <h3>Short-Form</h3>
+      <p>
+        Reels, Shorts and social content with strong hooks, pacing,
+        captions and visual rhythm.
+      </p>
+    </div>
+
+    <div class="service">
+      <span class="num">02</span>
+      <h3>Talking Head</h3>
+      <p>
+        Personal-brand content with B-roll, motion graphics,
+        sound design and retention-focused structure.
+      </p>
+    </div>
+
+    <div class="service">
+      <span class="num">03</span>
+      <h3>YouTube & Podcast</h3>
+      <p>
+        Trailers, highlights and long-form content shaped around
+        story and viewer curiosity.
+      </p>
+    </div>
+
+    <div class="service">
+      <span class="num">04</span>
+      <h3>Real Estate</h3>
+      <p>
+        Cinematic property edits with premium pacing, transitions,
+        sound and presentation.
+      </p>
+    </div>
+
+    <div class="service">
+      <span class="num">05</span>
+      <h3>Education</h3>
+      <p>
+        Information-heavy content transformed into clear,
+        engaging visual stories.
+      </p>
+    </div>
+
+    <div class="service">
+      <span class="num">06</span>
+      <h3>Motion Graphics</h3>
+      <p>
+        Typography, animated explanations, visual accents and
+        transitions that support the message.
+      </p>
+    </div>
+
+  </div>
+
 </div>
 
-<div class="portfolio-group">
-  <h3 class="portfolio-title">Talking Head</h3>
-  <div class="grid">
-    <div class="project"><div class="media vertical"><iframe src="https://www.youtube.com/embed/yTgloIFw0f4?rel=0&modestbranding=1" title="Talking Head" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
-    <div class="project"><div class="media vertical"><iframe src="https://www.youtube.com/embed/B15v1TQfTsI?rel=0&modestbranding=1" title="Talking Head" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
-    <div class="project"><div class="media vertical"><iframe src="https://www.youtube.com/embed/y0HGKlj-UUc?rel=0&modestbranding=1" title="Talking Head" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
-    <div class="project"><div class="media vertical"><iframe src="https://www.youtube.com/embed/NSqkk_jdX8Q?rel=0&modestbranding=1" title="Talking Head" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+</section>
+
+
+<!-- QUOTE -->
+
+<section>
+
+<div class="wrap">
+
+  <div class="quote">
+    Editing isn't just cutting clips.
+    <span>It's controlling attention.</span>
   </div>
+
 </div>
 
-<div class="portfolio-group">
-  <h3 class="portfolio-title">Education</h3>
-  <div class="grid">
-    <div class="project"><div class="media vertical"><iframe src="https://www.youtube.com/embed/rp7Tuhu9zhs?rel=0&modestbranding=1" title="Education" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
-    <div class="project"><div class="media vertical"><iframe src="https://www.youtube.com/embed/aKp9OpWug-Y?rel=0&modestbranding=1" title="Education" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
-    <div class="project"><div class="media vertical"><iframe src="https://www.youtube.com/embed/XVJI_qzKFag?rel=0&modestbranding=1" title="Education" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
-    <div class="project"><div class="media vertical"><iframe src="https://www.youtube.com/embed/d9bSmErIZmc?rel=0&modestbranding=1" title="Education" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+</section>
+
+
+<!-- PROCESS -->
+
+<section id="process">
+
+<div class="wrap">
+
+  <div class="sectionhead">
+    <h2>Simple process</h2>
+
+    <p>
+      A remote workflow designed to keep projects clear and easy to manage.
+    </p>
   </div>
+
+  <div class="process">
+
+    <div class="step">
+      <span class="num">01</span>
+      <h3>Discovery</h3>
+      <p>
+        Understand the content, audience and objective.
+      </p>
+    </div>
+
+    <div class="step">
+      <span class="num">02</span>
+      <h3>Footage</h3>
+      <p>
+        Receive footage, references and requirements.
+      </p>
+    </div>
+
+    <div class="step">
+      <span class="num">03</span>
+      <h3>Edit</h3>
+      <p>
+        Build the first version around the agreed direction.
+      </p>
+    </div>
+
+    <div class="step">
+      <span class="num">04</span>
+      <h3>Feedback</h3>
+      <p>
+        Review the cut and provide revision notes.
+      </p>
+    </div>
+
+    <div class="step">
+      <span class="num">05</span>
+      <h3>Delivery</h3>
+      <p>
+        Receive the final files in the required format.
+      </p>
+    </div>
+
+  </div>
+
 </div>
 
-</div></section>
+</section>
 
-<section id="services"><div class="wrap"><div class="sectionhead"><h2>What I edit</h2><p>Content built around attention, clarity and a strong visual identity.</p></div><div class="services">
-<div class="service"><span class="num">01</span><h3>Short-Form</h3><p>Reels, Shorts and social content with strong hooks, pacing, captions and visual rhythm.</p></div>
-<div class="service"><span class="num">02</span><h3>Talking Head</h3><p>Personal-brand content with B-roll, motion graphics, sound design and retention-focused structure.</p></div>
-<div class="service"><span class="num">03</span><h3>YouTube & Podcast</h3><p>Trailers, highlights and long-form content shaped around story and viewer curiosity.</p></div>
-<div class="service"><span class="num">04</span><h3>Real Estate</h3><p>Cinematic property edits with premium pacing, transitions, sound and presentation.</p></div>
-<div class="service"><span class="num">05</span><h3>Education</h3><p>Information-heavy content transformed into clear, engaging visual stories.</p></div>
-<div class="service"><span class="num">06</span><h3>Motion Graphics</h3><p>Typography, animated explanations, visual accents and transitions that support the message.</p></div>
-</div></div></section>
 
-<section><div class="wrap"><div class="quote">Editing isn't just cutting clips. <span>It's controlling attention.</span></div></div></section>
+<!-- ABOUT -->
 
-<section id="process"><div class="wrap"><div class="sectionhead"><h2>Simple process</h2><p>A remote workflow designed to keep projects clear and easy to manage.</p></div><div class="process">
-<div class="step"><span class="num">01</span><h3>Discovery</h3><p>Understand the content, audience and objective.</p></div>
-<div class="step"><span class="num">02</span><h3>Footage</h3><p>Receive footage, references and requirements.</p></div>
-<div class="step"><span class="num">03</span><h3>Edit</h3><p>Build the first version around the agreed direction.</p></div>
-<div class="step"><span class="num">04</span><h3>Feedback</h3><p>Review the cut and provide revision notes.</p></div>
-<div class="step"><span class="num">05</span><h3>Delivery</h3><p>Receive the final files in the required format.</p></div>
-</div></div></section>
+<section id="about">
 
-<section id="about"><div class="wrap about"><div><div class="eyebrow">About</div><h2>Logesh — Video Editor.</h2></div><div><p>I specialize in creating engaging video content across short-form, talking head, educational, real estate, YouTube and podcast formats.</p><p>My focus is simple: strong hooks, clean storytelling, thoughtful motion and editing that keeps the viewer watching.</p><a class="btn" href="https://www.instagram.com/logesh.hq/" target="_blank">More work on Instagram ↗</a></div></div></section>
+<div class="wrap about">
 
-<section id="contact"><div class="wrap contact-cta">
   <div>
-    <div class="eyebrow">Start a project</div>
-    <h2>Looking for Growth?<br><span>Let's Sync!</span></h2>
+
+    <div class="eyebrow">
+      About
+    </div>
+
+    <h2>
+      Logesh — Video Editor.
+    </h2>
+
   </div>
-  <button class="btn primary project-open" type="button">Start a Project ↗</button>
-</div></section>
+
+  <div>
+
+    <p>
+      I specialize in creating engaging video content across short-form,
+      talking head, educational, real estate, YouTube and podcast formats.
+    </p>
+
+    <p>
+      My focus is simple: strong hooks, clean storytelling, thoughtful
+      motion and editing that keeps the viewer watching.
+    </p>
+
+    <a
+      class="btn"
+      href="https://www.instagram.com/logesh.hq/"
+      target="_blank">
+      More work on Instagram ↗
+    </a>
+
+  </div>
+
+</div>
+
+</section>
 
 
-<div class="success-modal" id="successModal" aria-hidden="true">
-  <div class="success-backdrop" data-close-success></div>
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="wrap contact-cta">
+
+  <div>
+
+    <div class="eyebrow">
+      Start a project
+    </div>
+
+    <h2>
+      Looking for Growth?<br>
+      <span>Let's Sync!</span>
+    </h2>
+
+  </div>
+
+  <button
+    class="btn primary project-open"
+    type="button">
+    Start a Project ↗
+  </button>
+
+</div>
+
+</section>
+
+
+<!-- SUCCESS MODAL -->
+
+<div
+  class="success-modal"
+  id="successModal"
+  aria-hidden="true">
+
+  <div
+    class="success-backdrop"
+    data-close-success>
+  </div>
+
   <div class="success-glass">
-    <div class="success-mark">✓</div>
-    <div class="eyebrow">SYNCO</div>
-    <h3>Thanks for choosing <span>SYNCO</span></h3>
-    <p>Our team will contact you within 24 hours.</p>
-    <button class="btn primary" type="button" data-close-success>Done</button>
+
+    <div class="success-mark">
+      ✓
+    </div>
+
+    <div class="eyebrow">
+      SYNCO
+    </div>
+
+    <h3>
+      Thanks for choosing <span>SYNCO</span>
+    </h3>
+
+    <p>
+      Our team will contact you within 24 hours.
+    </p>
+
+    <button
+      class="btn primary"
+      type="button"
+      data-close-success>
+      Done
+    </button>
+
   </div>
+
 </div>
 
-<!-- Liquid Glass Project Form -->
-<div class="project-modal" id="projectModal" aria-hidden="true">
-  <div class="glass-backdrop" data-close-modal></div>
-  <div class="glass-modal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
-    <button class="modal-close" type="button" aria-label="Close" data-close-modal>×</button>
-    <div class="eyebrow">Start a project</div>
-    <h3 id="projectModalTitle">Let's build something<br><span>worth watching.</span></h3>
-    <form class="form" id="projectForm">
-      <input type="hidden" name="access_key" value="e7b81b50-173c-4acb-96d5-af74941284e2">
-      <input type="hidden" name="subject" value="New Project Inquiry — SYNCO">
-      <input type="hidden" name="from_name" value="SYNCO Portfolio">
-      <input type="checkbox" name="botcheck" style="display:none">
-      <div class="form-row">
-        <input name="name" placeholder="Name" required>
-        <input name="email" type="email" placeholder="Email" required>
-      </div>
-      <input name="company" placeholder="Company / Brand">
-      <select name="project" required>
-        <option value="">Project type</option>
-        <option>Short-form</option>
-        <option>Talking head</option>
-        <option>YouTube / Podcast</option>
-        <option>Real Estate</option>
-        <option>Education</option>
-        <option>Other</option>
-      </select>
-      <div class="form-row">
-        <input name="videos" placeholder="Number of videos">
-        <input name="deadline" type="date" aria-label="Preferred project date" title="Choose your preferred project date">
-      </div>
-      <input name="budget" placeholder="Budget range">
-      <textarea name="message" placeholder="Tell me about the project" required></textarea>
-      <input name="references" placeholder="Reference / Drive link">
-      <button class="btn primary submit-project" type="submit">Submit Project ↗</button>
-      <p class="form-status" id="formStatus" aria-live="polite"></p>
-    </form>
+
+<!-- PROJECT FORM MODAL -->
+
+<div
+  class="project-modal"
+  id="projectModal"
+  aria-hidden="true">
+
+  <div
+    class="glass-backdrop"
+    data-close-modal>
   </div>
+
+  <div
+    class="glass-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="projectModalTitle">
+
+    <button
+      class="modal-close"
+      type="button"
+      aria-label="Close"
+      data-close-modal>
+      ×
+    </button>
+
+    <div class="eyebrow">
+      Start a project
+    </div>
+
+    <h3 id="projectModalTitle">
+      Let's build something<br>
+      <span>worth watching.</span>
+    </h3>
+
+    <form
+      class="form"
+      id="projectForm">
+
+      <div class="form-row">
+
+        <input
+          name="name"
+          placeholder="Name"
+          required>
+
+        <input
+          name="email"
+          type="email"
+          placeholder="Email"
+          required>
+
+      </div>
+
+      <input
+        name="company"
+        placeholder="Company / Brand">
+
+      <select
+        name="project"
+        required>
+
+        <option value="">
+          Project type
+        </option>
+
+        <option>
+          Short-form
+        </option>
+
+        <option>
+          Talking head
+        </option>
+
+        <option>
+          YouTube / Podcast
+        </option>
+
+        <option>
+          Real Estate
+        </option>
+
+        <option>
+          Education
+        </option>
+
+        <option>
+          Other
+        </option>
+
+      </select>
+
+      <div class="form-row">
+
+        <input
+          name="videos"
+          placeholder="Number of videos">
+
+        <input
+          name="deadline"
+          type="date"
+          aria-label="Preferred project date"
+          title="Choose your preferred project date">
+
+      </div>
+
+      <input
+        name="budget"
+        placeholder="Budget range">
+
+      <textarea
+        name="message"
+        placeholder="Tell me about the project"
+        required></textarea>
+
+      <input
+        name="references"
+        placeholder="Reference / Drive link">
+
+      <button
+        class="btn primary submit-project"
+        type="submit">
+        Submit Project ↗
+      </button>
+
+      <p
+        class="form-status"
+        id="formStatus"
+        aria-live="polite">
+      </p>
+
+    </form>
+
+  </div>
+
 </div>
+
 </main>
 
-<footer class="wrap"><div>© 2026 Logesh. All rights reserved.</div><div class="social"><a href="https://www.instagram.com/logesh.hq/" target="_blank">Instagram</a><a href="#contact">Contact</a></div></footer>
+
+<!-- FOOTER -->
+
+<footer class="wrap">
+
+  <div>
+    © 2026 Logesh. All rights reserved.
+  </div>
+
+  <div class="social">
+
+    <a
+      href="https://www.instagram.com/logesh.hq/"
+      target="_blank">
+      Instagram
+    </a>
+
+    <a href="#contact">
+      Contact
+    </a>
+
+  </div>
+
+</footer>
 
 
 <script>
+
 const modal = document.getElementById('projectModal');
-const successModal = document.getElementById('successModal');
-const openBtn = document.querySelector('.project-open');
-const closeButtons = document.querySelectorAll('[data-close-modal]');
-const successCloseButtons = document.querySelectorAll('[data-close-success]');
-const form = document.getElementById('projectForm');
-const submitButton = form?.querySelector('.submit-project');
+
+const successModal =
+  document.getElementById('successModal');
+
+const openBtn =
+  document.querySelector('.project-open');
+
+const closeButtons =
+  document.querySelectorAll('[data-close-modal]');
+
+const successCloseButtons =
+  document.querySelectorAll('[data-close-success]');
+
+const form =
+  document.getElementById('projectForm');
+
+const submitButton =
+  form?.querySelector('.submit-project');
+
 
 function openProjectModal(){
+
   modal.classList.add('open');
-  modal.setAttribute('aria-hidden','false');
-  document.body.classList.add('modal-open');
-  setTimeout(() => modal.querySelector('input[name="name"]')?.focus(), 250);
+
+  modal.setAttribute(
+    'aria-hidden',
+    'false'
+  );
+
+  document.body.classList.add(
+    'modal-open'
+  );
+
+  setTimeout(() => {
+
+    modal
+      .querySelector('input[name="name"]')
+      ?.focus();
+
+  },250);
+
 }
+
+
 function closeProjectModal(){
+
   modal.classList.remove('open');
-  modal.setAttribute('aria-hidden','true');
-  document.body.classList.remove('modal-open');
+
+  modal.setAttribute(
+    'aria-hidden',
+    'true'
+  );
+
+  document.body.classList.remove(
+    'modal-open'
+  );
+
 }
+
+
 function openSuccessModal(){
+
   successModal.classList.add('open');
-  successModal.setAttribute('aria-hidden','false');
-  document.body.classList.add('modal-open');
+
+  successModal.setAttribute(
+    'aria-hidden',
+    'false'
+  );
+
+  document.body.classList.add(
+    'modal-open'
+  );
+
 }
+
+
 function closeSuccessModal(){
+
   successModal.classList.remove('open');
-  successModal.setAttribute('aria-hidden','true');
-  document.body.classList.remove('modal-open');
+
+  successModal.setAttribute(
+    'aria-hidden',
+    'true'
+  );
+
+  document.body.classList.remove(
+    'modal-open'
+  );
+
 }
 
-openBtn?.addEventListener('click', openProjectModal);
-closeButtons.forEach(btn => btn.addEventListener('click', closeProjectModal));
-successCloseButtons.forEach(btn => btn.addEventListener('click', closeSuccessModal));
 
-document.addEventListener('keydown', e => {
-  if(e.key === 'Escape'){
-    if(successModal.classList.contains('open')) closeSuccessModal();
-    else if(modal.classList.contains('open')) closeProjectModal();
-  }
+openBtn?.addEventListener(
+  'click',
+  openProjectModal
+);
+
+
+closeButtons.forEach(btn => {
+
+  btn.addEventListener(
+    'click',
+    closeProjectModal
+  );
+
 });
 
-const dateInput = form?.querySelector('input[name="deadline"]');
-if(dateInput){
-  const today = new Date();
-  const yyyy = today.getFullYear();
-  const mm = String(today.getMonth() + 1).padStart(2,'0');
-  const dd = String(today.getDate()).padStart(2,'0');
-  dateInput.min = `${yyyy}-${mm}-${dd}`;
-}
 
-form?.addEventListener('submit', async e => {
-  e.preventDefault();
+successCloseButtons.forEach(btn => {
 
-  if(!form.checkValidity()){
-    form.reportValidity();
-    return;
-  }
+  btn.addEventListener(
+    'click',
+    closeSuccessModal
+  );
 
-  const accessKey = form.querySelector('input[name="access_key"]')?.value;
-  if(!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY'){
-    alert('Please add your Web3Forms access key before using the form.');
-    return;
-  }
+});
 
-  submitButton.disabled = true;
-  submitButton.textContent = 'Sending…';
 
-  try {
-    const formData = new FormData(form);
-    const response = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json'
-      },
-      body: formData
-    });
+document.addEventListener(
+  'keydown',
+  e => {
 
-    const result = await response.json();
+    if(e.key === 'Escape'){
 
-    if(result.success){
-      form.reset();
-      closeProjectModal();
-      submitButton.disabled = false;
-      submitButton.textContent = 'Submit Project ↗';
-      openSuccessModal();
-    }else{
-      throw new Error(result.message || 'Submission failed');
+      if(
+        successModal.classList.contains('open')
+      ){
+
+        closeSuccessModal();
+
+      }
+
+      else if(
+        modal.classList.contains('open')
+      ){
+
+        closeProjectModal();
+
+      }
+
     }
-  } catch(error) {
-    submitButton.disabled = false;
-    submitButton.textContent = 'Submit Project ↗';
-    alert('Unable to send your project details right now. Please try again.');
-    console.error(error);
+
   }
-});
+);
+
+
+/* DATE */
+
+const dateInput =
+  form?.querySelector(
+    'input[name="deadline"]'
+  );
+
+if(dateInput){
+
+  const today = new Date();
+
+  const yyyy =
+    today.getFullYear();
+
+  const mm =
+    String(
+      today.getMonth() + 1
+    ).padStart(2,'0');
+
+  const dd =
+    String(
+      today.getDate()
+    ).padStart(2,'0');
+
+  dateInput.min =
+    `${yyyy}-${mm}-${dd}`;
+
+}
+
+
+/* GOOGLE SHEETS FORM SUBMISSION */
+
+const GOOGLE_SCRIPT_URL =
+  'https://script.google.com/macros/s/AKfycbzIod0mh5-sD_-MAYfq4IWZ7Y0q2tmyp1ouNoLHeDpv7oye7iVb4GRLF0nCh9esvLpB/exec';
+
+form?.addEventListener(
+  'submit',
+  async e => {
+
+    e.preventDefault();
+
+    if(!form.checkValidity()){
+
+      form.reportValidity();
+
+      return;
+
+    }
+
+    submitButton.disabled = true;
+
+    submitButton.textContent =
+      'Sending…';
+
+    try{
+
+      const formData =
+        new FormData(form);
+
+      await fetch(
+        GOOGLE_SCRIPT_URL,
+        {
+          method:'POST',
+          mode:'no-cors',
+          body:formData
+        }
+      );
+
+      form.reset();
+
+      closeProjectModal();
+
+      submitButton.disabled =
+        false;
+
+      submitButton.textContent =
+        'Submit Project ↗';
+
+      openSuccessModal();
+
+    }
+
+    catch(error){
+
+      submitButton.disabled =
+        false;
+
+      submitButton.textContent =
+        'Submit Project ↗';
+
+      alert(
+        'Unable to send your project details right now. Please try again.'
+      );
+
+      console.error(error);
+
+    }
+
+  }
+);
+
 </script>
+
 </body>
 </html>
